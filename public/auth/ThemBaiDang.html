@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;display=swap"
+      rel="stylesheet" />
+    <!-- Style-->
+    <link rel="stylesheet" href="/public/source/css/ThemBaiDang.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/public/source/img/favicon.png" />
+    <link rel="stylesheet" href="/public/source/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/7b85820244.js"
+      crossorigin="anonymous"></script>
+    <title>CoCoEdu</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="actions_user_hd">
+        <div class="profile_hd" id="profile" onclick="menuhdToggle()">
+          <img src="/public/source/img/user_none1.png" alt="image user" />
+        </div>
+        <div class="menu_user_hd">
+          <div class="profile_name">
+            Quốc Cường <br /><span>Administator</span>
+          </div>
+          <ul>
+            <li><a href="#">Hồ Sơ</a></li>
+            <li><a href="#">Đăng Xuất</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="search-bar">
+        <input type="text" class="searchTerm" placeholder="Tìm kiếm tại đây" />
+        <button type="submit" class="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="/public/source/img/preskool.png" alt="logo" />
+        <a href="/public/auth/homepage.html">
+          <span class="logo_name">CoCoEdu</span>
+        </a>
+      </div>
+
+      <div class="nav_links">
+        <div class="sidenav">
+          <!-- Bảng điều khiển -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-border-all" id="icon_sn"></i>
+              <span class="link_name">Bảng điều khiển</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Bảng điều khiển</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/admin_dashboard.html">Administrator</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/teacher_dashboard.html">Giáo Viên</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/student_dashboard.html">Học Sinh</a>
+              </div>
+            </div>
+          </div>
+          <!-- Học Sinh -->
+
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-graduation-cap" id="icon_sn"></i>
+              <span class="link_name">Học Sinh</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Học Sinh</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/students.html">Danh Sách Học Sinh</a>
+              </div>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-student.html">Thêm Học Sinh</a>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-book-open" id="icon_sn"></i>
+              <span class="link_name">Lớp</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Lớp</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/classroom.html">Danh Sách Lớp</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-classroom.html">Thêm Lớp</a>
+              </div>
+            </div>
+          </div>
+          <!-- Giáo Viên -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-chalkboard-user" id="icon_sn"></i>
+              <span class="link_name">Giáo Viên</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Giáo Viên</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/teachers.html">Danh Sách Giáo Viên</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-teacher.html">Thêm Giáo Viên</a>
+              </div>
+            </div>
+          </div>
+          <!-- Bảng điểm-->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-regular fa-calendar" id="icon_sn"></i>
+              <span class="link_name">Bảng điểm</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Bảng điểm</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/NhapDiem.html">Xem bảng điểm</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/NhapDiem.html">Nhập bảng điểm</a>
+              </div>
+            </div>
+          </div>
+
+          <!--Thông Báo -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-pen" id="icon_sn"></i>
+              <span class="link_name">Thông báo</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Thông báo</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/homepage.html">Xem Thông báo</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/notice-list.html">Danh Sách Thông báo</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/ThemBaiDang.html">Tạo Thông báo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Quy Định -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-pen-ruler" id="icon_sn"></i>
+              <span class="link_name">Quy Định</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Quy Định</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/QuyDinh.html">Chỉnh Sửa Quy Định</a>
+              </div>
+            </div>
+          </div>
+          <!-- Báo Cáo -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-file-invoice" id="icon_sn"></i>
+              <span class="link_name">Báo Cáo</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Báo Cáo</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/BaoCaoTKMon.html">Báo Cáo Tổng Kết Môn</a>
+              </div>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/BaoCaoTKHK.html"
+                  >Báo Cáo Tổng Kết Học Kỳ</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="home-section">
+      <div class="home-content">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </section>
+
+    <div class="page-wrapper">
+      <div class="content-new">
+        <div class="content-input">
+          <div class="header-input"><h3>Tạo Thông Báo</h3></div>
+
+          <form class="mb-5" id="formElem">
+            <label class="col-form-label" for="">Tiêu đề *</label>
+            <div class="form">
+              <input
+                class="form-control form-control-title"
+                id="name"
+                type="text"
+                name="TieuDe"
+                placeholder="Tiêu đề bài đăng thông báo" />
+            </div>
+            <label class="col-form-label" for="">Nội dung *</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="NoiDung"
+              cols="30"
+              rows="4"
+              placeholder="Write your message"></textarea>
+            <input
+              class="btn btn-primary rounded-0 py-2 px-4"
+              value="ĐĂNG THÔNG BÁO"
+              type="button"
+              onclick="ThemBaiDang();return false;" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- include libraries(jQuery, bootstrap)-->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- include summernote css/js-->
+  <link
+    href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css"
+    rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+  <script>
+    $("#message").summernote({
+      placeholder: "Nội dung bài đăng",
+      tabsize: 2,
+      height: 500,
+    });
+  </script>
+  <script src="/public/source/js/main.js"></script>
+  <script src="/public/source/js/script.js"></script>
+</html>

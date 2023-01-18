@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/source/css/QuyDinh.css  " />
+    <link rel="stylesheet" href="/public/source/css/edit-student.css " />
+    <link
+      rel="stylesheet"
+      href="/public/source/fonts/fontawesome-free-6.2.0-web/css/all.css" />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/public/source/img/favicon.png" />
+    <link rel="stylesheet" href="/public/source/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/7b85820244.js"
+      crossorigin="anonymous"></script>
+    <title>CoCoEdu</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="actions_user_hd">
+        <div class="profile_hd" id="profile" onclick="menuhdToggle()">
+          <img src="/public/source/img/user_none1.png" alt="image user" />
+        </div>
+        <div class="menu_user_hd">
+          <div class="profile_name">
+            Quốc Cường <br /><span>Administator</span>
+          </div>
+          <ul>
+            <li><a href="#">Hồ Sơ</a></li>
+            <li><a href="#">Đăng Xuất</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="search-bar">
+        <input type="text" class="searchTerm" placeholder="Tìm kiếm tại đây" />
+        <button type="submit" class="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="/public/source/img/preskool.png" alt="logo" />
+        <a href="/public/auth/homepage.html">
+          <span class="logo_name">CoCoEdu</span>
+        </a>
+      </div>
+
+      <div class="nav_links">
+        <div class="sidenav">
+          <!-- Bảng điều khiển -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-border-all" id="icon_sn"></i>
+              <span class="link_name">Bảng điều khiển</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Bảng điều khiển</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/admin_dashboard.html">Administrator</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/teacher_dashboard.html">Giáo Viên</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/student_dashboard.html">Học Sinh</a>
+              </div>
+            </div>
+          </div>
+          <!-- Học Sinh -->
+
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-graduation-cap" id="icon_sn"></i>
+              <span class="link_name">Học Sinh</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Học Sinh</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/students.html">Danh Sách Học Sinh</a>
+              </div>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-student.html">Thêm Học Sinh</a>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-book-open" id="icon_sn"></i>
+              <span class="link_name">Lớp</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Lớp</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/classroom.html">Danh Sách Lớp</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-classroom.html">Thêm Lớp</a>
+              </div>
+            </div>
+          </div>
+          <!-- Giáo Viên -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-chalkboard-user" id="icon_sn"></i>
+              <span class="link_name">Giáo Viên</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Giáo Viên</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/teachers.html">Danh Sách Giáo Viên</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-teacher.html">Thêm Giáo Viên</a>
+              </div>
+            </div>
+          </div>
+          <!-- Bảng điểm-->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-regular fa-calendar" id="icon_sn"></i>
+              <span class="link_name">Bảng điểm</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Bảng điểm</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/NhapDiem.html">Xem bảng điểm</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/NhapDiem.html">Nhập bảng điểm</a>
+              </div>
+            </div>
+          </div>
+
+          <!--Thông Báo -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-pen" id="icon_sn"></i>
+              <span class="link_name">Thông báo</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Thông báo</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/homepage.html">Xem Thông báo</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/notice-list.html">Danh Sách Thông báo</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/ThemBaiDang.html">Tạo Thông báo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Quy Định -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-pen-ruler" id="icon_sn"></i>
+              <span class="link_name">Quy Định</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Quy Định</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/QuyDinh.html">Chỉnh Sửa Quy Định</a>
+              </div>
+            </div>
+          </div>
+          <!-- Báo Cáo -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-file-invoice" id="icon_sn"></i>
+              <span class="link_name">Báo Cáo</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Báo Cáo</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/BaoCaoTKMon.html">Báo Cáo Tổng Kết Môn</a>
+              </div>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/BaoCaoTKHK.html"
+                  >Báo Cáo Tổng Kết Học Kỳ</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="home-section">
+      <div class="home-content">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </section>
+
+    <div class="page-wrapper">
+      <div class="content">
+        <div class="page-header">
+          <div class="page-header-title">
+            <div class="page-header-student-title">
+              <h3 class="page-title">Danh sách quy định</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-form">
+          <div class="card">
+            <div class="card-table">
+              <div class="card-body">
+                <div class="card-body_head">
+                  <div class="card-body_header">
+                    <div class="page-header-student-title">
+                      <h3 class="page-title">Quy định</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body_body">
+                  <div class="Data-Table">
+                    <div class="Data-Table-body">
+                      <div class="Table-body">
+                        <table class="Table">
+                          <thead class="student-thead">
+                            <tr role="row" class="thead">
+                              <th
+                                class="sorting"
+                                tabindex="0"
+                                rowspan="1"
+                                colspan="1"
+                                aria-label="QuyDinh">
+                                Quy Định
+                              </th>
+
+                              <th
+                                class="text-end sorting"
+                                tabindex="0"
+                                rowspan="1"
+                                colspan="1"
+                                aria-label="DiaChi">
+                                Chỉnh sửa
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody class="student-tbody">
+                            <tr role="row" class="odd table-normal">
+                              <td class>
+                                Số tuổi học sinh tối thiểu/tối đa nhập học
+                              </td>
+                              <td class="text-end">
+                                <div class="action">
+                                  <a href="#" class="edit-btn js-edit-student">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                  </a>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr role="row" class="even table-normal">
+                              <td class>Sĩ số lớp tối đa</td>
+                              <td class="text-end">
+                                <div class="action">
+                                  <a href="#" class="edit-btn js-edit-student2">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                  </a>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr role="row" class="odd table-normal">
+                              <td class>Số điểm tối thiểu/tối đa môn học</td>
+                              <td class="text-end">
+                                <div class="action">
+                                  <a href="#" class="edit-btn js-edit-student3">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                  </a>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr role="row" class="even table-normal">
+                              <td class>Số điểm đạt môn học</td>
+                              <td class="text-end">
+                                <div class="action">
+                                  <a href="#" class="edit-btn js-edit-student4">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                  </a>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="Data-Table-footer"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal js-modal">
+      <div class="student-form-edit js-modal-content">
+        <div class="card">
+          <div class="card-table">
+            <div class="card-body-edit">
+              <div class="modal-close js-modal-close">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <form>
+                <div class="page-header-student-title">
+                  <h5 class="page-title">Số tuổi học sinh nhập học</h5>
+                </div>
+                <div class="row">
+                  <div class="edit-form-modal">
+                    <div class="submit-form">
+                      <div class="form-group local-form">
+                        <label>
+                          Số tuổi học sinh tối thiểu
+                          <span class="login-danger">*</span>
+                        </label>
+                        <input
+                          required
+                          type="number"
+                          class="form-control-edit"
+                          placeholder="Nhập số tuổi tối thiểu..." />
+                      </div>
+                    </div>
+
+                    <div class="submit-form">
+                      <div class="form-group local-form">
+                        <label>
+                          Số tuổi học sinh tối đa
+                          <span class="login-danger">*</span>
+                        </label>
+                        <input
+                          required
+                          type="number"
+                          class="form-control-edit"
+                          placeholder="Nhập số tuổi tối đa..." />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="student-image-submit">
+                  <div class="image-submit-btn">
+                    <button class="search-btn btn" type="submit">
+                      Xác nhận
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal js-modal2">
+      <div class="student-form-edit js-modal-content2">
+        <div class="card">
+          <div class="card-table">
+            <div class="card-body-edit">
+              <div class="modal-close js-modal-close2">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <form>
+                <div class="page-header-student-title">
+                  <h5 class="page-title">Sĩ số lớp tối đa</h5>
+                </div>
+                <div class="row">
+                  <div class="edit-form-modal">
+                    <div class="submit-form">
+                      <div class="form-group local-form">
+                        <label>
+                          Sĩ số lớp tối đa
+                          <span class="login-danger">*</span>
+                        </label>
+                        <input
+                          required
+                          type="number"
+                          class="form-control-edit"
+                          placeholder="Nhập sĩ số..." />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="student-image-submit">
+                  <div class="image-submit-btn">
+                    <button class="search-btn btn" type="submit">
+                      Xác nhận
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal js-modal3">
+      <div class="student-form-edit js-modal-content3">
+        <div class="card">
+          <div class="card-table">
+            <div class="card-body-edit">
+              <div class="modal-close js-modal-close3">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <form>
+                <div class="page-header-student-title">
+                  <h5 class="page-title">Số điểm tối thiểu/tối đa môn học</h5>
+                </div>
+                <div class="row">
+                  <div class="edit-form-modal">
+                    <div class="submit-form">
+                      <div class="form-group local-form">
+                        <label>
+                          Số điểm tối thiểu
+                          <span class="login-danger">*</span>
+                        </label>
+                        <input
+                          required
+                          type="number"
+                          class="form-control-edit"
+                          placeholder="Nhập số điểm..." />
+                      </div>
+                    </div>
+                    <div class="submit-form">
+                      <div class="form-group local-form">
+                        <label>
+                          Số điểm tối đa
+                          <span class="login-danger">*</span>
+                        </label>
+                        <input
+                          required
+                          type="number"
+                          class="form-control-edit"
+                          placeholder="Nhập số điểm..." />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="student-image-submit">
+                  <div class="image-submit-btn">
+                    <button class="search-btn btn" type="submit">
+                      Xác nhận
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal js-modal4">
+      <div class="student-form-edit js-modal-content4">
+        <div class="card">
+          <div class="card-table">
+            <div class="card-body-edit">
+              <div class="modal-close js-modal-close4">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+              <form>
+                <div class="page-header-student-title">
+                  <h5 class="page-title">Số điểm đạt môn học</h5>
+                </div>
+                <div class="row">
+                  <div class="edit-form-modal">
+                    <div class="submit-form">
+                      <div class="form-group local-form">
+                        <label>
+                          Số điểm trung bình đạt của 1 môn học
+                          <span class="login-danger">*</span>
+                        </label>
+                        <input
+                          required
+                          type="number"
+                          class="form-control-edit"
+                          placeholder="Nhập số điểm..." />
+                      </div>
+                    </div>
+                    <div class="submit-form">
+                      <div class="form-group local-form">
+                        <label>
+                          Số điểm trung bình đạt của học sinh
+                          <span class="login-danger">*</span>
+                        </label>
+                        <input
+                          required
+                          type="number"
+                          class="form-control-edit"
+                          placeholder="Nhập số điểm..." />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="student-image-submit">
+                  <div class="image-submit-btn">
+                    <button class="search-btn btn" type="submit">
+                      Xác nhận
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/public/source/js/main.js"></script>
+    <script src="/public/source/js/edit-student.js "></script>
+    <script src="/public/source/js/quydinh.js "></script>
+  </body>
+</html>

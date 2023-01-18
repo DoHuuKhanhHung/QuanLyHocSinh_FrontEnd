@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CoCoEdu</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.1/handsontable.min.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="/public/source/css/style.css" />
+    <link rel="stylesheet" href="/public/source/css/NhapDiem.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/public/source/img/favicon.png" />
+    <!-- <link rel="stylesheet" href="/public/source/css/bootstrap.min.css" /> -->
+    <script
+      src="https://kit.fontawesome.com/7b85820244.js"
+      crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="actions_user_hd">
+        <div class="profile_hd" id="profile" onclick="menuhdToggle()">
+          <img src="/public/source/img/user_none1.png" alt="image user" />
+        </div>
+        <div class="menu_user_hd">
+          <div class="profile_name">
+            Quốc Cường <br /><span>Administator</span>
+          </div>
+          <ul>
+            <li><a href="#">Hồ Sơ</a></li>
+            <li><a href="#">Đăng Xuất</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="search-bar">
+        <input type="text" class="searchTerm" placeholder="Tìm kiếm tại đây" />
+        <button type="submit" class="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="/public/source/img/preskool.png" alt="logo" />
+        <a href="/public/auth/homepage.html">
+          <span class="logo_name">CoCoEdu</span>
+        </a>
+      </div>
+
+      <div class="nav_links">
+        <div class="sidenav">
+          <!-- Bảng điều khiển -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-border-all" id="icon_sn"></i>
+              <span class="link_name">Bảng điều khiển</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Bảng điều khiển</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/admin_dashboard.html">Administrator</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/teacher_dashboard.html">Giáo Viên</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/student_dashboard.html">Học Sinh</a>
+              </div>
+            </div>
+          </div>
+          <!-- Học Sinh -->
+
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-graduation-cap" id="icon_sn"></i>
+              <span class="link_name">Học Sinh</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Học Sinh</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/students.html">Danh Sách Học Sinh</a>
+              </div>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-student.html">Thêm Học Sinh</a>
+              </div>
+            </div>
+          </div>
+          <!-- Lớp -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-book-open" id="icon_sn"></i>
+              <span class="link_name">Lớp</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Lớp</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/classroom.html">Danh Sách Lớp</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-classroom.html">Thêm Lớp</a>
+              </div>
+            </div>
+          </div>
+          <!-- Giáo Viên -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-chalkboard-user" id="icon_sn"></i>
+              <span class="link_name">Giáo Viên</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Giáo Viên</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/teachers.html">Danh Sách Giáo Viên</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/edit-teacher.html">Thêm Giáo Viên</a>
+              </div>
+            </div>
+          </div>
+          <!-- Bảng điểm-->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-regular fa-calendar" id="icon_sn"></i>
+              <span class="link_name">Bảng điểm</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Bảng điểm</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/NhapDiem.html">Xem bảng điểm</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/NhapDiem.html">Nhập bảng điểm</a>
+              </div>
+            </div>
+          </div>
+
+          <!--Thông Báo -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-pen" id="icon_sn"></i>
+              <span class="link_name">Thông báo</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Thông báo</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/homepage.html">Xem Thông báo</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/notice-list.html">Danh Sách Thông báo</a>
+              </div>
+              <div class="nbar-sub">
+                <a href="/public/auth/ThemBaiDang.html">Tạo Thông báo</a>
+              </div>
+            </div>
+          </div>
+          <!-- Quy Định -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-pen-ruler" id="icon_sn"></i>
+              <span class="link_name">Quy Định</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Quy Định</a>
+              <div class="nbar-sub">
+                <a href="/public/auth/QuyDinh.html">Chỉnh Sửa Quy Định</a>
+              </div>
+            </div>
+          </div>
+          <!-- Báo Cáo -->
+          <div>
+            <button class="dropdown-btn">
+              <i class="fa-solid fa-file-invoice" id="icon_sn"></i>
+              <span class="link_name">Báo Cáo</span>
+              <i class="fas fa-angle-right" id="drop"></i>
+            </button>
+            <div class="dropdown-container">
+              <a class="link_name" href="#">Báo Cáo</a>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/BaoCaoTKMon.html">Báo Cáo Tổng Kết Môn</a>
+              </div>
+
+              <div class="nbar-sub">
+                <a href="/public/auth/BaoCaoTKHK.html"
+                  >Báo Cáo Tổng Kết Học Kỳ</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="home-section">
+      <div class="home-content">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </section>
+    <div class="page-wrapper">
+      <main role="main" class="container">
+        <div>
+          <h1>Điểm</h1>
+        </div>
+        <div class="Bd-content">
+          <p class="lead">Managing employee database using Spreadsheet</p>
+          <span>
+            <strong>Học kỳ:</strong>
+            <select id="HocKy">
+              <option value="1">Học kỳ 1</option>
+              <option value="2">Học kỳ 2</option>
+            </select>
+          </span>
+          <span>
+            <strong>Năm học:</strong>
+            <select id="NamHoc">
+              <option value="NH2022">2021-2022</option>
+              <option value="NH2023">2022-2023</option>
+            </select>
+          </span>
+
+          <div>
+            <button id="GetData" onclick="LayThongTin()">Lấy thông tin</button>
+          </div>
+
+          <div class="container welcome-div">
+            <div id="employee"></div>
+          </div>
+          <button id="btnSave">Save</button>
+        </div>
+      </main>
+    </div>
+
+    <!--  -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.35.1/handsontable.min.js"></script>
+
+    <!--  -->
+    <script type="text/javascript">
+      var data = [
+        {
+          MSHS: "",
+          HoVaTen: "",
+          DiemMieng: "",
+          Diem15p: "",
+          Diem1Tiet: "",
+          DiemGK: "",
+          DiemCK: "",
+        },
+      ];
+      var container = document.getElementById("employee");
+      var hot = new Handsontable(container, {
+        data: data,
+        rowHeaders: true,
+        colHeaders: false,
+        colHeaders: [
+          "MSHS",
+          "Họ và tên",
+          "Điểm miệng",
+          "Điểm 15 phút",
+          "Điểm 1 tiết",
+          "Điểm GK",
+          "Điểm CK",
+        ],
+        columnSorting: true,
+        sortIndicator: true,
+      });
+    </script>
+
+    <!-- button onclick -->
+    <script>
+      document.getElementById("btnSave").onclick = function () {
+        var data = hot.getData();
+        console.log(data);
+      };
+    </script>
+
+    <script>
+      async function LayThongTin() {
+        data = {
+          HocKy: document.getElementById("HocKy").value,
+          NamHoc: document.getElementById("NamHoc").value,
+        };
+
+        let response = await fetch("/user/NhapDiem", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+          json: true,
+        });
+        let result = await response.json();
+
+        if (result.redirect) {
+          window.location.href = result.redirect;
+        }
+      }
+    </script>
+    <script src="/public/source/js/main.js"></script>
+  </body>
+</html>
